@@ -1,0 +1,24 @@
+<!-- prettier-ignore -->
+<div class="core">
+	<p *ngIf="!data.editMode" class="{{ isSelected() ? 'highlight' : '' }}">{{ data.label }} <span *ngIf="data.locked" class="is-size-7">(lock)</span></p>
+	<form *ngIf="data.editMode" id="update_thread" (ngSubmit)="update(thread)" #thread="ngForm">
+		<input type="text" [(ngModel)]="data.label" name="label" placeholder="label" class="input is-small" />
+	</form>
+	<div class="field has-addons">
+		<p class="control">
+			<button *ngIf="data.editMode" type="submit" form="update_thread" class="button is-small is-primary is-light" title="valider">
+				sauvegarder
+			</button>
+		</p>
+		<p class="control">
+			<button *ngIf="!data.locked && !data.editMode" (click)="toggleEdit($event)" type="button" class="button is-small is-warning is-light" title="update">
+				éditer
+			</button>
+		</p>
+		<p class="control">
+			<button *ngIf="!data.locked && !data.editMode" (click)="remove($event)" type="button" class="button is-small is-danger is-light" title="delete">
+				X
+			</button>
+		</p>
+	</div>
+</div>

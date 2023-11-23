@@ -1,0 +1,39 @@
+<section>
+	<h1 *ngIf="getState() > 1" class="title block">
+		{{ threadService.thread?.label }}
+	</h1>
+
+	<div [ngSwitch]="getState()">
+		<article class="message is-info" *ngSwitchCase="0">
+			<div class="message-body">Aucun salon n'est sélectionné.</div>
+		</article>
+		<article class="message is-info" *ngSwitchCase="1">
+			<div class="message-body">Chargement en cours...</div>
+		</article>
+		<article class="message is-info" *ngSwitchCase="2">
+			<div class="message-body">
+				Il n'y a aucun message pour l'instant !
+			</div>
+		</article>
+		<div *ngSwitchDefault>
+			<button *ngIf="hasMore()" (click)="loadMore()" class="button is-ghost">afficher plus de messages</button>
+			<message-item
+				*ngFor="let message of messageService.messages"
+				[data]="message"
+			></message-item>
+		</div>
+	</div>
+
+	<form *ngIf="getState() > 1" (ngSubmit)="addMessage(login)" #login="ngForm">
+		<h3 class="subtitle">Nouveau message</h3>
+		<div class="field">
+			<!-- prettier-ignore -->
+			<textarea class="textarea" [(ngModel)]="message" name="message" placeholder="Écrire un message.."></textarea>
+		</div>
+		<div class="field">
+			<button class="button is-success is-light" type="submit">
+				Écrire !
+			</button>
+		</div>
+	</form>
+</section>

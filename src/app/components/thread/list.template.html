@@ -1,0 +1,21 @@
+<aside class="is-hidden-mobile">
+	<p *ngIf="service.threads.length < 1">Chargement...</p>
+
+	<thread-item
+		*ngFor="let thread of service.threads"
+		(click)="changeTo(thread)"
+		[data]="thread"
+	></thread-item>
+
+	<!-- prettier-ignore -->
+	<form (ngSubmit)="onSubmit(create)" #create="ngForm" class="field has-addons">
+		<div class="control">
+			<input type="text" [(ngModel)]="label" name="label" placeholder="Nouveau canal" class="input" />
+		</div>
+		<div class="control">
+			<button type="submit" class="button is-success" title="add">
+				<i class="gg-math-plus"></i>
+			</button>
+		</div>
+	</form>
+</aside>

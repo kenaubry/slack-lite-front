@@ -1,0 +1,21 @@
+.core {
+	display: flex;
+	margin: 4px 6px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.core > p {
+	padding: 3px 4px;
+	width: -webkit-fill-available;
+}
+
+.highlight {
+	background-color: #ebfffc;
+	border-radius: 3px;
+	color: #00947e;
+}
+
+input {
+	width: 95%;
+}

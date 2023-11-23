@@ -1,0 +1,16 @@
+<!-- prettier-ignore -->
+<nav role="navigation" aria-label="main navigation">
+	<button class="button is-white is-hidden-tablet" (click)="toggleDisplay()" type="button" title="mobile toggle">
+		<i class="{{ display ? 'gg-close' : 'gg-menu-left-alt' }}"></i>
+	</button>
+	<h3>{{ service.user?.name }}</h3>
+	<button class="button is-white" type="button" (click)="service.logout()" title="logout">
+		<i class="gg-log-off"></i>
+	</button>
+	<img src="{{ service.user?.avatar }}" alt="user profile picture" />
+</nav>
+
+<main>
+	<thread-list></thread-list>
+	<message-list></message-list>
+</main>

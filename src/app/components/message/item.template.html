@@ -1,0 +1,21 @@
+<!-- prettier-ignore -->
+<article class="media">
+	<div class="media-left">
+		<figure class="image is-64x64">
+			<img src="{{ data.author.avatar }}" alt="Profile picture" />
+		</figure>
+	</div>
+	<div class="media-content">
+		<div class="content">
+			<div class="message-core">
+				<strong>{{ data.author.name }}</strong>,
+				<small>{{ data.date | friendlyDate }}</small>
+				<button class="delete-button button is-small is-ghost" *ngIf="isTheAuthor()" (click)="remove()" title="delete">
+					supprimer
+				</button>
+				<br />
+				<div [innerHTML]="data.content"></div>
+			</div>
+		</div>
+	</div>
+</article>

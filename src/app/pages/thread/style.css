@@ -1,0 +1,26 @@
+nav {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding: 12px;
+}
+
+nav img {
+	width: 48px;
+	border-radius: 50%;
+}
+
+nav button[title="logout"] {
+	padding: 11px;
+	border-radius: 50%;
+	margin: 0 16px;
+}
+
+nav button[title="mobile toggle"] {
+	order: -1;
+	margin-right: auto;
+}
+
+main {
+	display: flex;
+}

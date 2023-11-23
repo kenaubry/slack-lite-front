@@ -1,0 +1,23 @@
+aside {
+	min-height: calc(100vh - 73px);
+	display: flex;
+	flex-direction: column;
+	width: 260px;
+	padding-top: 16px;
+	background: white;
+	position: absolute;
+	z-index: 99;
+}
+
+form {
+	order: 1;
+	margin-top: auto;
+	text-align: center;
+	padding: 16px;
+}
+
+.loading {
+	margin: 4px 6px;
+	padding: 3px 4px;
+	width: -webkit-fill-available;
+}
